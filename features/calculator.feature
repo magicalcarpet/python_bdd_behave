@@ -1,5 +1,6 @@
 Feature: Calculator Functions
 
+@add
 Scenario: Addition
     Given the first number is inputted
     And the addition button is pressed
@@ -7,6 +8,7 @@ Scenario: Addition
     When the equals button is pressed
     Then we should see the correct result
 
+@division
 Scenario: Division
     Given the numerator is inputted
     And the division button is pressed
