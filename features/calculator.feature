@@ -8,6 +8,11 @@ Scenario: Addition
     Then we should see the correct result
 
 Scenario: Division
+    Given the numerator is inputted
+    And the division button is pressed
+    And the denominator is inputted
+    And the equals sign is pressed
+    Then the dividend is displayed
 
 
 Scenario: Multiplication
