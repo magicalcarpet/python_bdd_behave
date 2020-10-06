@@ -119,3 +119,69 @@ Correct result
 Took 0m0.001s
 ```
 
+# Docker Setup
+
+Once you have docker installed, you can now build the image
+by typing into the terminal:
+
+```shell
+$ docker build -t imagination .
+```
+
+Docker will now build the image.
+To check whether the image is actually built, type into the terminal:
+
+```shell
+$ docker images
+```
+
+You should now see a list of images in your host system and your image name should be displayed.
+
+```shell
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+imagination         latest              5efbce1fd96c        20 minutes ago      111MB
+```
+
+After confirmation of built image. We are now gonna run a container like so.
+
+```shell
+$ docker container run -dit --name pie38 imagination
+```
+
+The -dit flag is short for detach interactive tty, followed with our chosen name for the container **pie38** and lastly the image name **imagination**.
+
+Because we ran the container in interactive mode, we are now in the bash shell
+where can install files or run any typical bash commands.
+
+I then ran:
+
+```shell
+$ docker attach pie38
+```
+
+This attached me to the running container.
+
+So next I want to change into the pipenv environment in the container like so:
+
+```shell
+$ pipenv shell
+```
+
+You should see something like this in terminal:
+
+```console
+(python_bdd) usere@User-MBP python_bdd %
+```
+
+The (python_bdd) is proof you're now in the pipenv shell.
+
+Within this environment, we can run **invoke** command or **behave** commands.
+
+If you wish to leave this shell you must type:
+
+```console
+$ exit
+```
+
+Repeat till you are back in your terminal shell.
+
